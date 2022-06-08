@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,111 +7,113 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_margin="8dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/ic_launcher_round" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="4dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="20dp"
-                android:text="@string/card_title" />
-
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="20dp"
-                android:text="@string/card_time" />
-
-
-        </LinearLayout>
-
-        <ImageButton
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_margin="8dp"
-            android:src="@android:drawable/ic_menu_camera"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_margin="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:autoLink="web"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="@dimen/margin_sides"
+        android:contentDescription="@string/netology_avatar"
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_netology"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="@dimen/margin_sides"
+        android:layout_marginTop="24dp"
+        android:text="@string/card_title"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="@dimen/margin_sides"
+        android:text="@string/card_time"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/tv_netology" />
+
+    <ImageButton
+        android:layout_width="@dimen/icon_width"
+        android:layout_height="@dimen/icon_width"
+        android:layout_margin="@dimen/margin_sides"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/button_options"
+        android:src="@android:drawable/ic_menu_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+    <TextView
+        android:id="@+id/tv_greeting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="8dp">
+        android:layout_margin="@dimen/margin_sides"
+        android:autoLink="web"
+        android:text="@string/greeting"
+        app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
 
-        <ImageButton
-            android:layout_width="32dp"
-            android:src="@android:drawable/ic_menu_send"
-            android:layout_height="32dp" />
+    <ImageButton
+        android:id="@+id/btn_like"
+        android:layout_width="@dimen/icon_width"
+        android:layout_height="@dimen/icon_width"
+        android:layout_marginStart="@dimen/margin_sides"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/image_likes"
+        android:src="@android:drawable/ic_menu_send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_greeting" />
 
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="52" />
+    <TextView
+        android:id="@+id/count_likes"
+        android:layout_width="@dimen/icon_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:text="@string/placeholder_text"
+        app:layout_constraintStart_toEndOf="@id/btn_like"
+        app:layout_constraintTop_toTopOf="@id/btn_like" />
 
-        <ImageButton
-            android:layout_width="32dp"
-            android:src="@android:drawable/ic_menu_call"
-            android:layout_height="32dp"
-            android:layout_marginStart="20dp" />
+    <ImageButton
+        android:id="@+id/btn_share"
+        android:layout_width="@dimen/icon_width"
+        android:layout_height="@dimen/icon_width"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/image_share"
+        android:src="@android:drawable/ic_menu_call"
+        app:layout_constraintStart_toEndOf="@+id/count_likes"
+        app:layout_constraintTop_toTopOf="@id/btn_like"
+        app:layout_goneMarginStart="16dp" />
 
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="8" />
+    <TextView
+        android:id="@+id/tv_share"
+        android:layout_width="@dimen/icon_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:text="@string/placeholder_text"
+        app:layout_constraintStart_toEndOf="@id/btn_share"
+        app:layout_constraintTop_toTopOf="@id/btn_share" />
 
-        <ImageButton
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@android:drawable/ic_menu_edit"
-            android:layout_marginStart="20dp" />
+    <ImageView
+        android:layout_width="@dimen/icon_width"
+        android:layout_height="@dimen/icon_width"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/image_views"
+        android:src="@android:drawable/ic_menu_edit"
+        app:layout_constraintEnd_toStartOf="@+id/tv_views"
+        app:layout_constraintTop_toTopOf="@id/btn_share" />
 
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="52" />
+    <TextView
+        android:id="@+id/tv_views"
+        android:layout_width="@dimen/icon_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="@dimen/margin_sides"
+        android:text="@string/placeholder_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_share" />
 
-        <ImageButton
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@android:drawable/ic_lock_silent_mode_off"
-            android:layout_marginStart="104dp"
-            android:layout_gravity="end"/>
-
-        <TextView
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="52" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

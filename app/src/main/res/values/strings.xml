@@ -3,4 +3,10 @@
     <string name="greeting">NMedia!</string>
     <string name="card_title">netologia</string>
     <string name="card_time">21 may 18.36</string>
+    <string name="netology_avatar">Netology avatar</string>
+    <string name="button_options">Button options</string>
+    <string name="placeholder_text">52</string>
+    <string name="image_views">Image views</string>
+    <string name="image_share">Image share</string>
+    <string name="image_likes">Image likes</string>
 </resources>
