@@ -7,9 +7,9 @@ import ru.netology.nmedia.data.Repository
 class MainActivityViewModel(
     private val repository: IRepository = Repository()
 ) : ViewModel() {
-    val data = repository.get()
+    val data = repository.getAll()
 
-    fun like() = repository.like()
+    fun like(id: Long) = repository.like(id)
 
-    fun share() = repository.share()
+    fun share(id: Long) = repository.share(id)
 }
