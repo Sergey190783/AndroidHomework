@@ -10,4 +10,9 @@
     <string name="image_views">Просмотры</string>
     <string name="image_share">Поделились</string>
     <string name="image_likes">Лайки</string>
+    <string name="options_post_remove">Удалить</string>
+    <string name="post_text">Текст поста</string>
+    <string name="empty_content">Пост не может быть пустым</string>
+    <string name="options_post_edit">Редактировать</string>
+    <string name="edit_message">Редактировать сообщение</string>
 </resources>

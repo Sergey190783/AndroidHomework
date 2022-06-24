@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -11,10 +12,9 @@ import ru.netology.nmedia.R
 import ru.netology.nmedia.data.Post
 import ru.netology.nmedia.utils.PostDiffCallback
 
-class PostAdapter(
-    val onClickedLike: (Long) -> Unit,
-    val onClickedShare: (Long) -> Unit
-) : ListAdapter<Post, PostAdapter.PostViewHolder>(PostDiffCallback()) {
+class PostsAdapter(
+    val interaction: OnInteractionListener
+) : ListAdapter<Post, PostsAdapter.PostViewHolder>(PostDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         return PostViewHolder(
@@ -37,6 +37,7 @@ class PostAdapter(
         private val tvDate: TextView = itemView.findViewById(R.id.tv_date)
         private val tvAuthor: TextView = itemView.findViewById(R.id.tv_author)
         private val tvViews: TextView = itemView.findViewById(R.id.tv_views)
+        private val menu: ImageButton = itemView.findViewById(R.id.card_menu)
 
         fun bind(
             post: Post
@@ -50,11 +51,30 @@ class PostAdapter(
             tvViews.text = post.views.toString()
 
             btnLike.setOnClickListener {
-                onClickedLike(post.id)
+                interaction.onLike(post.id)
             }
 
             btnShare.setOnClickListener {
-                onClickedShare(post.id)
+                interaction.onShare(post.id)
+            }
+
+            menu.setOnClickListener {
+                PopupMenu(it.context, it).apply {
+                    inflate(R.menu.options_post)
+                    setOnMenuItemClickListener { item ->
+                        when(item.itemId){
+                            R.id.remove -> {
+                                interaction.onRemove(post.id)
+                                true
+                            }
+                            R.id.edit -> {
+                                interaction.onEdit(post)
+                                true
+                            }
+                            else -> false
+                        }
+                    }
+                }.show()
             }
         }
     }
