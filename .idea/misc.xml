@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/drawable/ic_like_48dp.xml" value="0.229" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/drawable/like_checkbox_tint.xml" value="0.189" />
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/card.xml" value="0.4" />
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/menu/options_post.xml" value="0.23854166666666668" />
