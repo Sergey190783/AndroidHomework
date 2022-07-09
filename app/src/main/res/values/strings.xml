@@ -14,4 +14,10 @@
     <string name="empty_content">Content can`t be empty</string>
     <string name="options_post_edit">Edit</string>
     <string name="edit_message">Edit message</string>
+    <string name="chooser_share_post" translatable="false">chooser_share_post</string>
+    <string name="empty_content_error">Cannot create empty post</string>
+    <string name="edit">Edit</string>
+    <string name="video_title">Illustration in media. Invite to design-lecrure</string>
+    <string name="video_views">8353 views</string>
+    <string name="create">Create</string>
 </resources>
