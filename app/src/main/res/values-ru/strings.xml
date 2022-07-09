@@ -15,4 +15,9 @@
     <string name="empty_content">Пост не может быть пустым</string>
     <string name="options_post_edit">Редактировать</string>
     <string name="edit_message">Редактировать сообщение</string>
+    <string name="empty_content_error">Нельзя создать пустой пост</string>
+    <string name="edit">Редактировать</string>
+    <string name="video_title">Иллюстрация в медиа. Приглашение на дизайн-лекторий</string>
+    <string name="create">Создать</string>
+    <string name="video_views">8353 просмотра</string>
 </resources>

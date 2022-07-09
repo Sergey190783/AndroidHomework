@@ -87,7 +87,8 @@ class Repository : IRepository {
             likedByMe = false,
             345,
             8678,
-            257
+            257,
+            "https://www.youtube.com/watch?v=WhWc3b3KhnY"
         ),
         Post(
             id = nextId++,
@@ -115,7 +116,8 @@ class Repository : IRepository {
             likedByMe = false,
             1,
             540,
-            567
+            567,
+            "https://www.youtube.com/watch?v=WhWc3b3KhnY"
         )
     ).reversed()
 
