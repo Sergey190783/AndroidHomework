@@ -2,4 +2,5 @@
 <resources>
     <dimen name="icon_width">32dp</dimen>
     <dimen name="margin_sides">8dp</dimen>
+    <dimen name="icon_button_min_size">0dp</dimen>
 </resources>

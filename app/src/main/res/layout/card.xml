@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <ImageView
         android:id="@+id/iv_avatar"
         android:layout_width="80dp"
@@ -32,14 +34,15 @@
         app:layout_constraintStart_toEndOf="@id/iv_avatar"
         app:layout_constraintTop_toBottomOf="@+id/tv_author" />
 
-    <ImageButton
-        android:layout_width="@dimen/icon_width"
-        android:layout_height="@dimen/icon_width"
-        android:layout_margin="@dimen/margin_sides"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/button_options"
-        android:src="@android:drawable/ic_menu_camera"
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/card_menu"
+        style="@style/Widget.AppTheme.DefaultAppButton"
+        android:layout_width="48dp"
+        app:iconGravity="top"
+        android:layout_height="48dp"
+        android:layout_margin="@dimen/margin_sides"
+        android:contentDescription="@string/button_options"
+        app:icon="@drawable/ic_three_dots"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/iv_avatar" />
 
@@ -52,64 +55,43 @@
         android:text="@string/greeting"
         app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_like"
-        android:layout_width="@dimen/icon_width"
-        android:layout_height="@dimen/icon_width"
+        style="@style/Widget.AppTheme.LikeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_sides"
         android:layout_marginTop="8dp"
+        android:checkable="true"
         android:contentDescription="@string/image_likes"
-        android:src="@android:drawable/ic_menu_send"
+        app:icon="@drawable/ic_like_48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_greeting" />
+        app:layout_constraintTop_toBottomOf="@id/tv_greeting"
+        tools:text="100" />
 
-    <TextView
-        android:id="@+id/tv_likes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="6dp"
-        android:text="@string/placeholder_text"
-        app:layout_constraintStart_toEndOf="@id/btn_like"
-        app:layout_constraintTop_toTopOf="@id/btn_like" />
-
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_share"
-        android:layout_width="@dimen/icon_width"
-        android:layout_height="@dimen/icon_width"
-        android:layout_marginStart="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:contentDescription="@string/image_share"
-        android:src="@android:drawable/ic_menu_call"
-        app:layout_constraintStart_toEndOf="@+id/tv_likes"
+        app:icon="@drawable/ic_share"
+        tools:text="100"
+        style="@style/Widget.AppTheme.DefaultAppButton"
+        app:layout_constraintStart_toEndOf="@+id/btn_like"
         app:layout_constraintTop_toTopOf="@id/btn_like" />
 
-    <TextView
-        android:id="@+id/tv_share"
+    <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="6dp"
-        android:text="@string/placeholder_text"
-        app:layout_constraintStart_toEndOf="@id/btn_share"
-        app:layout_constraintTop_toTopOf="@id/btn_share" />
-
-    <ImageView
-        android:layout_width="@dimen/icon_width"
-        android:layout_height="@dimen/icon_width"
         android:layout_marginEnd="4dp"
+        app:icon="@drawable/ic_views"
+        android:id="@+id/btn_views"
+        android:clickable="false"
+        style="@style/Widget.AppTheme.DefaultAppButton"
         android:contentDescription="@string/image_views"
-        android:src="@android:drawable/ic_menu_edit"
-        app:layout_constraintEnd_toStartOf="@+id/tv_views"
-        app:layout_constraintTop_toTopOf="@id/btn_share" />
-
-    <TextView
-        android:id="@+id/tv_views"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/placeholder_text"
         app:layout_constraintEnd_toEndOf="parent"
+        tools:text="100"
         app:layout_constraintTop_toTopOf="@id/btn_share" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
