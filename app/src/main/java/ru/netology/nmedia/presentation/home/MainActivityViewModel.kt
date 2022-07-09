@@ -1,14 +1,18 @@
 package ru.netology.nmedia.presentation.home
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ru.netology.nmedia.data.IRepository
-import ru.netology.nmedia.data.Post
+import ru.netology.nmedia.data.FileRepositoryImpl
 import ru.netology.nmedia.data.Repository
+import ru.netology.nmedia.data.Post
+import ru.netology.nmedia.data.RepositoryImpl
 
 class MainActivityViewModel(
-    private val repository: IRepository = Repository()
-) : ViewModel() {
+    application: Application
+) : AndroidViewModel(application) {
+    private val repository: Repository = FileRepositoryImpl(application)
     private val empty = Post(
         id = 0,
         content = "",
