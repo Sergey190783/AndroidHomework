@@ -1,4 +1,4 @@
-package ru.netology.nmedia.presentation
+package ru.netology.nmedia.presentation.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -1,16 +1,14 @@
-package ru.netology.nmedia.presentation
+package ru.netology.nmedia.presentation.home
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.checkbox.MaterialCheckBox
 import ru.netology.nmedia.R
 import ru.netology.nmedia.data.Post
 import ru.netology.nmedia.utils.PostDiffCallback
@@ -40,6 +38,8 @@ class PostsAdapter(
         private val tvDate: TextView = itemView.findViewById(R.id.tv_date)
         private val tvAuthor: TextView = itemView.findViewById(R.id.tv_author)
 
+        private val videoPreview: LinearLayout = itemView.findViewById(R.id.video_layout)
+
         fun bind(
             post: Post
         ) {
@@ -58,14 +58,23 @@ class PostsAdapter(
             }
 
             btnShare.setOnClickListener {
-                interaction.onShare(post.id)
+                interaction.onShare(post)
+            }
+
+            if (post.video != null) {
+                videoPreview.visibility = View.VISIBLE
+                videoPreview.setOnClickListener {
+                    interaction.onClickVideoPreview(post.video!!)
+                }
+            } else {
+                videoPreview.visibility = View.GONE
             }
 
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {
                     inflate(R.menu.options_post)
                     setOnMenuItemClickListener { item ->
-                        when(item.itemId){
+                        when (item.itemId) {
                             R.id.remove -> {
                                 interaction.onRemove(post.id)
                                 true
