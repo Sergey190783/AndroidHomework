@@ -3,11 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/drawable/ic_create.xml" value="0.229" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/drawable/ic_empty_like.xml" value="0.229" />
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/drawable/ic_like_48dp.xml" value="0.229" />
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/drawable/like_checkbox_tint.xml" value="0.189" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/activity_app.xml" value="0.23854166666666668" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/activity_create.xml" value="0.25416666666666665" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/activity_editing.xml" value="0.23854166666666668" />
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/card.xml" value="0.4" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/fragment_create_post.xml" value="0.203125" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/fragment_details.xml" value="0.2" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/fragment_edit_post.xml" value="0.203125" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/fragment_feed.xml" value="0.23854166666666668" />
+        <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/layout/fragment_home.xml" value="0.23854166666666668" />
         <entry key="..\:/Ivan/Work/Students/Sergey/androidhw1/app/src/main/res/menu/options_post.xml" value="0.23854166666666668" />
       </map>
     </option>
