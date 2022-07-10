@@ -1,5 +1,7 @@
 package ru.netology.nmedia.data
 
+import java.io.Serializable
+
 data class Post(
     val id: Long,
     val author: String,
@@ -10,4 +12,4 @@ data class Post(
     val reposts: Int,
     val views: Int,
     var video: String? = null
-)
+): Serializable

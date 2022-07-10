@@ -1,6 +1,7 @@
 package ru.netology.nmedia.data
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
@@ -30,6 +31,8 @@ class FileRepositoryImpl(
                     }
                 } finally {
                     data.value = posts
+                    //find max index, in latter launches of the app, this prevent repeated indexes
+                    nextId = posts.sortedWith(compareBy{it.id}).last().id + 1
                 }
             }
         } else {
@@ -46,6 +49,7 @@ class FileRepositoryImpl(
     override fun getAll(): LiveData<List<Post>> = data
 
     override fun like(id: Long) {
+        Log.d("mytag", posts.toString())
         posts = posts.map {
             when {
                 it.id != id -> it
@@ -83,6 +87,7 @@ class FileRepositoryImpl(
                 )
             ) + posts
             data.value = posts
+            sync()
             return
         }
 

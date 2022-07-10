@@ -1,4 +1,4 @@
-package ru.netology.nmedia.presentation.home
+package ru.netology.nmedia.presentation.feed
 
 import ru.netology.nmedia.data.Post
 
@@ -8,4 +8,5 @@ interface OnInteractionListener {
     fun onRemove(id: Long) {}
     fun onShare(post: Post) {}
     fun onClickVideoPreview(url: String){}
+    fun onRequestPostDetails(post: Post){}
 }

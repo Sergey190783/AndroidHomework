@@ -1,4 +1,4 @@
-package ru.netology.nmedia.presentation.home
+package ru.netology.nmedia.presentation.feed
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.PopupMenu
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
@@ -33,6 +34,7 @@ class PostsAdapter(
         private val btnShare: MaterialButton = itemView.findViewById(R.id.btn_share)
         private val btnViews: MaterialButton = itemView.findViewById(R.id.btn_views)
         private val menu: MaterialButton = itemView.findViewById(R.id.card_menu)
+        private val postLayout: ConstraintLayout = itemView.findViewById(R.id.post_layout)
 
         private val tvGreeting: TextView = itemView.findViewById(R.id.tv_greeting)
         private val tvDate: TextView = itemView.findViewById(R.id.tv_date)
@@ -59,6 +61,10 @@ class PostsAdapter(
 
             btnShare.setOnClickListener {
                 interaction.onShare(post)
+            }
+
+            postLayout.setOnClickListener {
+                interaction.onRequestPostDetails(post)
             }
 
             if (post.video != null) {
